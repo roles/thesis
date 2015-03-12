@@ -1,0 +1,6 @@
+"Tumor_Sample"	"Gene"	"Chromosome"	"Start_Position.GRCh37."	"Variant_Classification"	"Reference_Allele"	"Variant_Allele"	"Transcript_Name.Ensembl_69."	"amino_acid_change."	"Cancer.Type"
+"1"	"TCGA-02-0003-01A-01D-1490-08"	"ENSG00000259660"	"15"	102292749	"RNA"	"A"	"C"	"ENST00000561463"	"NULL"	"gbm"
+"2"	"TCGA-02-0003-01A-01D-1490-08"	"HRH2"	"5"	175110351	"Missense"	"G"	"A"	"ENST00000377291"	"p.V39I"	"gbm"
+"7"	"TCGA-02-0003-01A-01D-1490-08"	"NR1I3"	"1"	161206281	"Silent"	"C"	"T"	"ENST00000515452"	"p.A25"	"gbm"
+"47"	"TCGA-02-0003-01A-01D-1490-08"	"AASS"	"7"	121717919	"Frame_Shift_Ins"	"-"	"G"	"ENST00000393376"	"p.A878fs"	"gbm"
+"85"	"TCGA-02-0033-01A-01D-1490-08"	"GPR19"	"12"	12814147	"In_Frame_Del"	"ATTTGGTGG"	"-"	"ENST00000332427"	"p.PPN410in_frame_del"	"gbm"

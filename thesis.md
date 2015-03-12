@@ -297,6 +297,61 @@ hij是一个与theta和x相关的函数，假定将theta固定，可以将这个
 
 #### 2.2.2 Intel MKL
 
+## 3. 基于DBN的有监督分类模型
+
+本章详细描述基于DBN的有监督分类模型用于TCGA癌症突变序列分类的实现细节。
+本章将与各种其它分类模型（SVM、MLP、ClassRBM等）对比其分类正确率、收敛速度等分类模型性能，
+同时使用激励最大化算法对训练好的DBN网络结点进行探索，结合统计归纳的方法总结出不同癌症对应的关键致病基因。
+
+### 3.1 数据来源及预处理
+
+本章数据主要来源于TCGA计划开源提供的3281个12种癌症病人的基因突变序列数据，
+这12种癌症类别包括膀胱癌（Bladder Urothelial Carcinoma，简称BLCA）、乳腺癌（Breast Invasive Carcinoma，简称BRCA）、
+结肠腺癌（Colon Adenocarcinoma，简称COAD）、直肠腺癌（Rectum Adenocarcinoma，简称READ）、
+多形性胶质母细胞瘤（Glioblastoma Multiforme，简称GBM)、头和颈部鳞状细胞癌（Head and Neck Squamous Cell Carcinoma，简称HNSC）、
+肾析透细胞癌（Kidney Renal Clear Cell Carcinoma，简称KIRC）、急性白血病（Acute Myeloid Leukemia，简称LAML）、
+肺腺癌（Lung Adenocarcinoma，简称LUAD）、肺鳞状细胞癌（Lung Squamous Cell Carcinoma，简称LUSC）、
+卵巢浆液性囊腺癌（Ovarian Serous Cystadenocarcinoma，简称OV）和子宫内膜癌（Uterine Corpus Endometrioid Carcinoma，简称UCEC）。
+
+原始数据中共包含633377条基因突变记录，共有2万多个突变基因，每条记录包含病人样本ID、突变基因、所在染色体、突变位置、
+变异类型、原始等位基因、变异后等位基因以及病人的癌症类型，部分数据如表（3.1）所示：
+
+[表3.1]
+
+其中各种突变类型分别表示：
+1. RNA表示mRNA突变；
+2. Missense表示突变使得原基因产生蛋白质的过程失效；
+3. Silent表示突变不影响原基因产生蛋白质的过程；
+4. Frame_Shift_Ins表示原基因片段插入；
+5. In_Frame_Del表示原基因片段删除。
+
+为了使原始数据能够适用于分类模型的训练，需要对数据进行预处理，构建出x=(x1,...xN)属于RN的N维二值向量作为模型输入。
+首先，原始数据中包含了很多种类的突变信息，而本文选择突变基因作为考虑，将所有的突变类型都划分为该基因有突变，即xi=1。
+另一方面，由于2万个突变基因作为输入维度过大，所以对各基因在原始数据记录中的突变频度进行统计排序，选取排名前5000的基因作为数据特征，将其余的突变基因忽略。
+选取的原因是突变频度较少的基因一般数据被动基因，而本文主要是要探索癌症的驱动基因，因此进行这样的筛选。
+然后针对癌症病人i，若在原始数据中他有基因j的突变，则xij设为1，否则xij设为0，处理后的数据为一个3821*5000的二值矩阵，部分数据如下表：
+
+[表3.2]
+
+### 3.2 算法描述
+
+### 3.3 模型实现
+
+### 3.4 实验结果
+
+### 3.5 本章小结
+
+## 4. 基于深层自编码器的无监督分类模型
+
+### 4.1 数据来源
+
+### 4.2 算法描述
+
+### 4.3 模型实现
+
+### 4.4 实验结果
+
+### 4.5 本章小结
 
 
 ## 参考文献
