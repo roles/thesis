@@ -357,7 +357,35 @@ hij是一个与theta和x相关的函数，假定将theta固定，可以将这个
 2. 在训练前100次对完整训练集的迭代，动量参数（Momentum）选择为0.9，之后的训练则将其调整为0.5；
 3. 权重值W的初始化为N(0,1)高斯分布中的采样值，偏置则全部初始化为0。
 
+
+
 ### 3.3 实验结果
+
+### 3.3.2 重要基因分析
+
+TP53基因是提供制造p53蛋白质的功能基因，这种蛋白质一般作为肿瘤的抑制者，
+能够规律化细胞的分裂，防止过快甚至不可控的细胞分裂。
+如果TP53基因发生突变，则其制造p53蛋白质的功能受到损害，而缺少p53蛋白质的抑制，
+细胞便可以无限制地进行分裂生长，造成癌症肿瘤的产生，因此可见TP53突变是重要致癌突变。
+
+PTEN基因也是多种癌症共有的重要致病基因。
+PTEN通过其磷酸酯酶蛋白产物而行使一种抑癌基因的作用，这一磷酸酯酶参与了细胞周期的调节，阻止细胞过快地生长与分裂。
+PTEN基因被鉴定为一种肿瘤抑制物[15]，在多种癌症中往往处于变异状态，
+其编码的蛋白质是一种磷脂酰肌醇-3,4,5-三磷酸3-磷酸酯酶，
+该蛋白同时含有一张力蛋白样结构域及一催化结构域，这与双特异性蛋白酪氨酸磷酸酶很相似。
+
+在乳腺癌BRCA的相关基因中，可以看出BRCA1和BRCA2基因突变对乳腺癌致病起到重要作用。
+BRCA1和BRCA2都能产生肿瘤抑制蛋白质，这些蛋白质可以修复受损的DNA，
+因此对保持细胞遗传物质的稳定性起到重要作用。
+研究表明[14]如果BRCA1和BRCA2产生突变，则女性患乳腺癌的风险将会大大增加。
+一般而言12%的女性在她的生命中可能会患上乳腺癌，而如果BRCA1基因受损患病率会高达55%到65%，
+若BRCA2基因受损患病率会上升到45%左右，由此可见BRCA1和BRCA2基因对于乳腺癌致病的重要作用。
+
+而对于LUAD和LUSC两种癌症，可以看出LRP1B基因两种肺癌都有较强的作用。
+LRP1B由多个功能结构域构成，其中包括细胞外半胱氨酸的配体结合域、
+带p螺旋浆的表皮生长因子的类前驱域、单通的跨膜传输域和细胞胞质内噬作用域。
+Ding[13]阐述了LRP1B在肺癌细胞系和食管肿瘤中所表现出表观遗传上的功能缺失，
+LRP1B基因突变是肺癌肿瘤的重要发病机制。
 
 ### 3.4 本章小结
 
@@ -388,6 +416,9 @@ hij是一个与theta和x相关的函数，假定将theta固定，可以将这个
 10. A colorectal cancer classification system that associates cellular phenotype and responses to therapy
 11. Recent Advances in Cancer Therapy: An Overview
 12. Mutational landscape and significance across 12 major cancer types
+13. Somatic mutations affect key pathways in lung adenocarcinoma
+14. Average risks of breast and ovarian cancer associated with BRCA1 or BRCA2 mutations detected in case series unselected for family history: A combined analysis of 22 studies.
+15. PTEN : phosphatase and tensin homolog
 
 ## 关键词
 `癌症早诊早治项目`
